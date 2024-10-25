@@ -20,10 +20,18 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import Home from "./home/Home.jsx";  // <Home /> Permet d'afficher la page d'accueil n'oubliez pas de l'importer
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,  // <App /> permet d'afficher la page d'accueil
+    children: [
+      {
+        path: "/",
+        element: <Home />,  // <Home /> permet d'afficher la page d'accueil
+      },
+    ],
   },
 ]);
 
