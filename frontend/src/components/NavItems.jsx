@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/images/logo/logo.png';
 
 const NavItems = () => {
 
@@ -16,13 +17,45 @@ const NavItems = () => {
         }
     })  
   return (
-    <header>
+    <header className={`header-section style-4 ${headerFixed ? 'header-fixed fadeInUp' : ''}`}>
     {/* header top start */}
-    <div className={`header-top ${socialToggle ? 'open' : ''}`}>
-      <div className="header-top-area">
+    <div className={`header-top d-md-none ${socialToggle ? 'open' : ''}`}>
+      <div className="container">
+      <div className="header-top-area ">
         <Link to="/signup" className="lab-btn me-3"><span>Create Account</span></Link>
         <Link to="/login"><span>Log In</span></Link>
       </div>
+      </div>
+    </div>
+
+    {/* Header Bottom */}
+    <div className="header-bottom">
+      <div className="container">
+        <div className="header-wrapper">
+            {/* Logo */}
+            <div className="logo">
+                <div className='logo-search-acte'>
+                    <div className="logo">
+                        <Link to="/">
+                            <img src={logo}/>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            {/* Menu du nav bar */}
+            <div className="menu-area">
+                    <div className="menu">
+                        <ul className={`lab-ul ${menuToggle ? 'active' : ''}`}>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/shop">Shop</Link></li>
+                            <li><Link to="/blog">Blog</Link></li>
+                            <li><Link to="/about">About</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+        </div>
     </div>
   </header>
   )
