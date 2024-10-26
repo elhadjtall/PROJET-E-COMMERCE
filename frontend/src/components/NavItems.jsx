@@ -64,7 +64,7 @@ const NavItems = () => {
                         <span></span>
                         <span></span>
                     </div>
-                    {/* social toggle */}
+                    {/* social toggle  ce code permet d'afficher une icon pour afficher le menu creation cmpte  et connexion*/}
                     <div className='ellepsis-bar d-md-none' onClick={() => setSocialToggle(!socialToggle)}>
                     <i class="icofont-info-square"></i>
                     </div>
