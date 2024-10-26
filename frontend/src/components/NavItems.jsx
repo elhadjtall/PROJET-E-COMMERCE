@@ -53,6 +53,21 @@ const NavItems = () => {
                             <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     </div>
+                    {/* separateur du menu au boutton */}
+                    {/* Social pour creer un compte */}
+                    <Link to="/signup" className="lab-btn me-3 d-none d-md-block">Create Account</Link>
+                    <Link to="/login" className="d-none d-md-block">Log In</Link>
+
+                    {/* menu toggler icon du menu en mode mobile */}
+                    <div onClick={() => setMenuToggle(!menuToggle)} className={`header-bar d-md-none ${menuToggle ? 'active' : ''}`}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    {/* social toggle */}
+                    <div className='ellepsis-bar d-md-none' onClick={() => setSocialToggle(!socialToggle)}>
+                    <i class="icofont-info-square"></i>
+                    </div>
             </div>
         </div>
         </div>
