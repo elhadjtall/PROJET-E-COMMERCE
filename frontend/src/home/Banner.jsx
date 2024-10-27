@@ -19,8 +19,11 @@ const bannerList = [
 
 const Banner = () => {
   return (
-    <div>
-      Banner
+    // banner section permet d'afficher le text de recherche d'un produit au milieu de la page
+    <div className='banner-section style-4'>
+        <div className='container'>
+            <div className='banner-content'>{title}</div>
+        </div>
     </div>
   )
 }
