@@ -22,18 +22,31 @@ const bannerList = [
 const Banner = () => {
 
     const {searchInput, setSearchInput} = useState('');
-    const {filteredProducts, setFilteredProducts} = useState([]);
+    const {filteredProducts, setFilteredProducts} = useState(productData);
 
     // Après l'importation du fichier json, nous pouvons l'utiliser pour la recherche d'un produit
-    console.log(productData);
+    // console.log(productData);
+
+    // fonction de recherche d'un produit
+    const handleSearch = (e) => {
+        const searchTerm = e.target.value;
+        setSearchInput(e.target.value);
+
+        // Filtrer les produits en fonction du terme de recherche
+        const filtered = productData.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
+        setFilteredProducts(filtered);
+    }
   return (
     // banner section permet d'afficher le text de recherche d'un produit au milieu de la page
     <div className='banner-section style-4'> 
         <div className='container'>
-            <div className='banner-content'>{title}</div>
+            <div className='banner-content'>
+                {title}
                 <form>
-                <input type='text' name='search' id='search' placeholder='Serach your product'/>
+                <input type='text' name='search' id='search' placeholder='Serach your product' value={searchInput} onChange={handleSearch}/>
                 </form>
+                <p>{desc}</p>
+            </div>
         </div>
     </div>
   )
