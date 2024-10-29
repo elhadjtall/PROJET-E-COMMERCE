@@ -51,9 +51,9 @@ const Banner = () => {
                             placeholder='Search your product' 
                             value={searchInput} 
                             onChange={handleSearch}/>
-                        <button type='submit'>
-                        <i className='icofont-search'></i>
-                        </button>
+                            <button type='submit'>
+                            <i className='icofont-search'></i>
+                            </button>
                     </form>
                     <p>{desc}</p>
                     <ul className='lab-ul'>
