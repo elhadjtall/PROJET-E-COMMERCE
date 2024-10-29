@@ -59,9 +59,20 @@ const HomeCategory = () => {
                         categoryList.map((val, i) => (<div key={i} className='col'>
                             <Link to="/shop" className='category-item'>
                                 <div className='category-inner'>
+                                    {/* images en miniature */}
                                     <div className='category-thumb'>
                                         <img src={val.imgUrl} alt={val.imgAlt} />
                                     </div>
+
+                                    {/* nom de la categorie */}
+                                    <div className='category-content'>
+                                        <div className='cate-icon'>
+                                            <i className={val.iconName}></i>
+                                        </div>
+                                        <Link>{val.title}</Link>
+                                    </div>
+
+                                    {/*  */}
 
                                 </div>
                             </Link>
