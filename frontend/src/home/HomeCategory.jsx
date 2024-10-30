@@ -16,31 +16,31 @@ const categoryList = [
         imgUrl : "src/assets/images/category/02.jpg",
         imgAlt: "catgory rakbra",
         iconName: "icofont-brand-apple",
-        title: "Smart Watch",
+        title: "Shoes",
     },
     {
         imgUrl : "src/assets/images/category/03.jpg",
         imgAlt: "catgory rakbra",
         iconName: "icofont-brand-android",
-        title: "Smart TV",
+        title: "Photography Camera",
     },
     {
         imgUrl : "src/assets/images/category/04.jpg",
         imgAlt: "catgory rakbra",
         iconName: "icofont-brand-skype",
-        title: "Smart Speaker",
+        title: "Formal Dress",
     },
     {
         imgUrl : "src/assets/images/category/05.jpg",
         imgAlt: "catgory rakbra",
         iconName: "icofont-brand-play-station",
-        title: "Video Game",
+        title: "Colorful Bags",
     },
     {
         imgUrl : "src/assets/images/category/06.jpg",
         imgAlt: "catgory rakbra",
         iconName: "icofont-brand-android",
-        title: "Smart Watch",
+        title: "Home Decor",
     },
 ]
 const HomeCategory = () => {
@@ -69,15 +69,18 @@ const HomeCategory = () => {
                                         <div className='cate-icon'>
                                             <i className={val.iconName}></i>
                                         </div>
-                                        <Link>{val.title}</Link>
+                                        {/* nom de la categorie en lien ce code donne la visibilité au lien */}
+                                        <Link to="/shop"><h6>{val.title}</h6></Link>
                                     </div>
-
-                                    {/*  */}
-
                                 </div>
                             </Link>
                        </div> ))
                     }
+                </div>
+
+                {/* bouton pour rediriger vers le shop */}
+                <div className='text-center mt-5'>
+                    <Link to="/shop" className='lab-btn'><span>{btnText}</span></Link>  
                 </div>
 
             </div>

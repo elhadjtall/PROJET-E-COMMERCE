@@ -19,7 +19,6 @@ const bannerList = [
         text: "Buy Anything Online"
     },
 ];
-
 const Banner = () => {
     const [searchInput, setSearchInput] = useState('');
     const [filteredProducts, setFilteredProducts] = useState(productData);
@@ -35,7 +34,6 @@ const Banner = () => {
         );
         setFilteredProducts(filtered);
     };
-
     return (
         // section de bannière affichant le texte de recherche au milieu de la page
         <div className='banner-section style-4'>
