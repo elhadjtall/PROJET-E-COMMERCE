@@ -101,13 +101,21 @@ const CategoryShowCase = () => {
         <div className='container'>
             {/* section header pour afficher le titre et le sous-titre */}
             <div className='section-header text-center'>
+                {/* sous-titre du produit */}
                 <h2 className='title'>{title}</h2>
+                {/* Filter section des produits par categories */}
                 <div className='course-filter-group'>
+                    {/* cette partie permet de selection les types de produit par categorie */}
                     <ul className='lab-ul'>
+                        {/* selection de tout */}
                         <li onClick={() => setItems(productData)}>All</li>
+                        {/* selection seulement des categories Shoes */}
                         <li onClick={() => filterItem("Shoes")}>Shoes</li>
+                        {/* selection seulement des categories Bags */}
                         <li onClick={() => filterItem("Bags")}>Bags</li>
+                        {/* selection seulement des categories Phones */}
                         <li onClick={() => filterItem("Phones")}>Phones</li>
+                        {/* selection seulement des categories Beauty */}
                         <li onClick={() => filterItem("Beauty")}>Beauty</li>
                     </ul>
                 </div>
