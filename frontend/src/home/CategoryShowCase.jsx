@@ -4,7 +4,6 @@ import Ratting from '../components/Ratting';
 import { Link } from 'react-router-dom';
 
 const title = "Our Products";
-
 const subTitle = "Choose Any Product";
 
 const productData = [
@@ -19,25 +18,25 @@ const productData = [
     },
     {
         imgUrl : "src/assets/images/categoryTab/02.jpg",
-        cate: "Shoes",
-        title: "Nike Premier X",
+        cate: "Bags",
+        title: "Louis Vuiton",
         author: "assets/images/courses/author/02.jpg",
-        brand: "Nike",
+        brand: "LV",
         price: "50.00",
         id: 2,
     },
     {
         imgUrl : "src/assets/images/categoryTab/03.jpg",
-        cate: "Shoes",
-        title: "Nike Premier X",
+        cate: "Phones",
+        title: "Iphone 12",
         author: "assets/images/courses/author/03.jpg",
-        brand: "Nike",
+        brand: "Apple",
         price: "50.00",
         id: 3,
     },
     {
         imgUrl : "src/assets/images/categoryTab/04.jpg",
-        cate: "Shoes",
+        cate: "Bags",
         title: "Nike Premier X",
         author: "assets/images/courses/author/04.jpg",
         brand: "Nike",
@@ -55,16 +54,16 @@ const productData = [
     },
     {
         imgUrl : "src/assets/images/categoryTab/06.jpg",
-        cate: "Shoes",
-        title: "Nike Premier X",
+        cate: "Beauty",
+        title: "Cephora",
         author: "assets/images/courses/author/06.jpg",
-        brand: "Nike",
+        brand: "Beauty",
         price: "50.00",
         id: 6,
     },
     {
         imgUrl : "src/assets/images/categoryTab/07.jpg",
-        cate: "Shoes",
+        cate: "Bags",
         title: "Nike Premier X",
         author: "assets/images/courses/author/07.jpg",
         brand: "Nike",
@@ -84,6 +83,14 @@ const productData = [
 const CategoryShowCase = () => {
     // selection des product data
     const [items, setItems] = useState(productData);
+
+    // fonction de filtrage des produits
+    const filterItem = (categItem) => {
+        const updatedItems = productData.filter((curElem) => {
+            return curElem.cate === categItem;
+        });
+        setItems(updatedItems);
+    };
   return (
     <div className='course-section style-3 padding-tb'>
         {/* main shapes */}
@@ -97,7 +104,7 @@ const CategoryShowCase = () => {
                 <h2 className='title'>{title}</h2>
                 <div className='course-filter-group'>
                     <ul className='lab-ul'>
-                        <li onClick={() => filterItem("All")}>All</li>
+                        <li onClick={() => setItems(productData)}>All</li>
                         <li onClick={() => filterItem("Shoes")}>Shoes</li>
                         <li onClick={() => filterItem("Bags")}>Bags</li>
                         <li onClick={() => filterItem("Phones")}>Phones</li>
@@ -107,10 +114,10 @@ const CategoryShowCase = () => {
             </div>
             {/* section bod */}
             <div className='section-wrapper'>
-                <div className='row g-4 justify-content-center row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1'>
+                <div className='row g-4 justify-content-center row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 course-filter'>
                     {
                         items.map((product) => <div key={product.id} className='col'>
-                            <div className='course-item'>
+                            <div className='course-item style-4'>
                                 <div className='course-inner'>
                                     <div className='course-thumb'>
                                         <img src={product.imgUrl} alt="" />
