@@ -93,7 +93,7 @@ const CategoryShowCase = () => {
     };
   return (
     <div className='course-section style-3 padding-tb'>
-        {/* main shapes */}
+        {/* main shapes images en jaunes défilant chaque fois */}
         <div className='course-shape one'><img src="src/assets/images/shape-img/icon/01.png" alt="" /></div>
         <div className='course-shape two'><img src="src/assets/images/shape-img/icon/02.png" alt="" /></div>
 
