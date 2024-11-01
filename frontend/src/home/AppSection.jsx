@@ -16,6 +16,16 @@ const AppSection = () => {
             <p>{desc}</p>
         </div>
       </div>
+      
+      {/* section pour ajouter les images google play et app store */}
+      <div className='section-wrapper'>
+        <div className='lab-ul'>
+            <ul>
+                <li><Link to="/sign-up" className='app-btn'><img src="src/assets/images/app/01.jpg" alt="" /></Link></li>
+                <li><Link to="/sign-up" className='app-btn'><img src="src/assets/images/app/02.jpg" alt="" /></Link></li>
+            </ul>
+        </div>
+      </div>
     </div>
   )
 }
