@@ -35,10 +35,12 @@ const SponsorList = () => [
 
 const Sponsor = () => {
   return (
+    // sponsor section qui contient les images des sponsors
     <div className='sponsor-section section-bg'>
         <div className='container'>
             <div className='section-wrapper'>
             <div className='sponsor-slider'>
+                {/* sponsor slider qui contient les images des sponsors et qui defile  */}
             <Swiper
                 slidesPerView={2}
                 spaceBetween={20}
@@ -52,17 +54,18 @@ const Sponsor = () => {
                     spaceBetween: 20,
                 },
                 768: {
-                    slidesPerView: 3,
+                    slidesPerView: 4,
                     spaceBetween: 40,
                 },
                 1024: {
-                    slidesPerView: 4,
+                    slidesPerView: 5,
                     spaceBetween: 50,
                 },
                 }}
                 modules={[Autoplay]}
                 className="mySwiper"
             >
+                {/* les images des sponsors qui seront affichées */}
                 {
                     SponsorList().map((val, i) => (
                         <SwiperSlide key={i}>
