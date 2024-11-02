@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const title = 'About ShopCart';
 const desc = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, officia.';
 const quickTitle = 'Quick Links';
-const ItemTitle = "Categories"
+const ItemTitle = "Categories";
+const tweetTitle = "Twitter Feeds";
 
 // Ce code détermine les icônes des adresses
 const addressList = [
@@ -32,12 +33,30 @@ const ItemList = [
     { text: "Terms of Use", link: "#" },
 ];
 
+const tweetList = [
+    {
+        iconName: "icofont-twitter",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, officia.",
+    },
+    {
+        iconName: "icofont-twitter",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, officia.",
+    }
+];
+
+const footerbottomList = [
+    {text: "Faculty", link: "#"},
+    {text: "Staff", link: "#"},
+    {text: "Students", link: "#"},
+    {text: "Alumni", link: "#"},
+]
+
 const Footer = () => {
     return (
         <footer className='style-2'>
             <div className='footer-top dark-view padding-tb'>
                 <div className='container'>
-                    <div className='row'>
+                    <div className='row g-4 row-cols-xl-4 row-cols-sm-2 row-cols-1 justify-content-center'>
                         {/* footer item du premier block */}
                         <div className="col">
                             <div className="footer-item our-address">
@@ -112,6 +131,44 @@ const Footer = () => {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        {/* footer item du quatrieme block  newsletter */}
+                        <div className="col">
+                            <div className="footer-item our-address">
+                                <div className="footer-inner">
+                                    <div className="footer-content">
+                                        <div className="title">
+                                            <h4>{tweetTitle}</h4>
+                                        </div>
+                                        <div className="content">
+                                            <ul className="lab-ul office-address">
+                                                {tweetList.map((val, i) => (
+                                                    <li key={i}>
+                                                        <i className={val.iconName}>{val.desc}</i>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* footer bottom */}
+            <div className="footer-bottom">
+                <div className="container">
+                    <div className="section-wrapper">
+                        <p>&copy; 2024. Shop Cart Designed by <a href="/" target="_blank">XYZ</a></p>
+                        <div className="footer-bottom-list">
+                            {
+                                footerbottomList.map((val, i) => (
+                                    <a href='#' key={i}>{val.text}</a>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
