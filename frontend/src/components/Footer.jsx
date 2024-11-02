@@ -70,7 +70,7 @@ const Footer = () => {
                                             <ul className="lab-ul office-address">
                                                 {addressList.map((val, i) => (
                                                     <li key={i}>
-                                                        <i className={val.iconName}>{val.text}</i>
+                                                        <i className={val.iconName}></i> {val.text}
                                                     </li>
                                                 ))}
                                             </ul>
@@ -101,7 +101,7 @@ const Footer = () => {
                                             <ul className="lab-ul office-address">
                                                 {ItemList.map((val, i) => (
                                                     <li key={i}>
-                                                        <a href="#">{val.text}</a>
+                                                        <Link to={val.link}>{val.text}</Link>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -111,7 +111,7 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        {/* footer item du troisieme block  quick list*/}
+                        {/* footer item du troisieme block quick list */}
                         <div className="col">
                             <div className="footer-item our-address">
                                 <div className="footer-inner">
@@ -133,7 +133,7 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        {/* footer item du quatrieme block  newsletter */}
+                        {/* footer item du quatrieme block tweet list */}
                         <div className="col">
                             <div className="footer-item our-address">
                                 <div className="footer-inner">
@@ -145,7 +145,7 @@ const Footer = () => {
                                             <ul className="lab-ul office-address">
                                                 {tweetList.map((val, i) => (
                                                     <li key={i}>
-                                                        <i className={val.iconName}>{val.desc}</i>
+                                                        <i className={val.iconName}></i> {val.desc}
                                                     </li>
                                                 ))}
                                             </ul>
@@ -166,7 +166,7 @@ const Footer = () => {
                         <div className="footer-bottom-list">
                             {
                                 footerbottomList.map((val, i) => (
-                                    <a href='#' key={i}>{val.text}</a>
+                                    <Link to={val.link} key={i}>{val.text}</Link>
                                 ))
                             }
                         </div>
