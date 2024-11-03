@@ -3,6 +3,7 @@ import './App.css';
 import { Outlet } from 'react-router-dom';
 import NavItems from './components/NavItems';
 import Footer from './components/Footer';
+import Shop from './shop/Shop';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,7 +11,10 @@ function App() {
   return (
     <>
       <NavItems />
-      <Outlet />
+      {/* ce code affiche le contenu de la page avec une hauteur minimale, ce code viens du bootstrap */}
+      <div className='min-vh-100'> 
+        <Outlet />
+      </div>
       <Footer />
     </>
   );

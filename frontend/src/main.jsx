@@ -22,6 +22,7 @@ import {
 
 import Home from "./home/Home.jsx"; 
 import Blog from "./blog/Blog.jsx"; // <Home /> Permet d'afficher la page d'accueil n'oubliez pas de l'importer
+import Shop from "./shop/Shop.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,  // <Home /> permet d'afficher la page d'accueil
+      },
+      {
+        path: "/shop",
+        element: <Shop />,  // <Home /> permet d'afficher la page shop
       },
     ],
   },
