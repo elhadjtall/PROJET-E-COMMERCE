@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
+import Data from '../products.json';
+import ProductCards from './ProductCards';
 
 const Shop = () => {
-  const [GridList, setGridList] = useState(true);
   const showResults = "Showing 1–9 of 20 results"; // Déclarez la variable showResults ici
+  const [GridList, setGridList] = useState(true);
+  const [products, setProducts] = useState(Data); // Corrigez ici en utilisant Data sans tableau imbriqué
 
   return (
     <div>
@@ -15,16 +18,21 @@ const Shop = () => {
             {/* left side le bloc de gauche */}
             <div className="col-lg-8 col-12">
              <article>
+              {/* layout and title here */}
               <div className='shop-title d-flex flex-wrap justify-content-between'>
                 <p>{showResults}</p>
                 <div className={`product-view-mode ${GridList ? 'gridActive' : 'listActive'}`}>
-                  <a className='grid' onClick={() => setGridList(!GridList)}>
+                  <a className='grid' onClick={() => setGridList(true)}>
                     <i className="icofont-ghost"></i>
                   </a>
-                  <a className='list' onClick={() => setGridList(!GridList)}>
+                  <a className='list' onClick={() => setGridList(false)}>
                     <i className="icofont-listine-dots"></i>
                   </a>
                 </div>
+              </div>
+
+              <div>
+                <ProductCards GridList={GridList} products={products}/>
               </div>
              </article>
             </div>
