@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Ratting from '../components/Ratting'
 
 const ProductCards = ({GridList, products}) => {
 
@@ -23,6 +24,16 @@ const ProductCards = ({GridList, products}) => {
                             </a>
                             <Link to="/cart-page"> <i className='icofont-cart-alt'></i></Link>
                         </div>
+                    </div>
+
+                    {/* product details */}
+                    <div className="product-content">
+                        <h5>
+                            <Link to={'/shop/${product.id}'}>{product.name}</Link>
+                        </h5>
+                        <p className='productRating'>
+                            <Ratting/>
+                        </p>
                     </div>
                 </div>
             </div>
