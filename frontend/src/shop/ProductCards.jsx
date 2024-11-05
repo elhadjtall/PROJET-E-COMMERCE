@@ -9,6 +9,7 @@ const ProductCards = ({GridList, products}) => {
       {
         products.map((product, i) => (
             <div key={i} className="col-lg-4 col-md-6 col-12">
+                {/* Single product */}
                 <div className="product-item">
                     {/* product image */}
                     <div className="product-thumb">
