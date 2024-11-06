@@ -3,6 +3,7 @@ import PageHeader from '../components/PageHeader';
 import Data from '../products.json';
 import ProductCards from './ProductCards';
 import Pagination from './Pagination';
+import Search from './Search';
 
 const Shop = () => {
   const showResults = "Showing 1–9 of 20 results";
@@ -58,10 +59,12 @@ const Shop = () => {
              </article>
             </div>
             {/* fin du bloc */}
-            
+
             {/* Debut right side le bloc de droite */}
             <div className="col-lg-4 col-12">
-              right side
+              <aside>
+                <Search products={products} GridList={GridList}/>
+              </aside>
             </div>
             {/* fin du bloc de droite */}
           </div>
