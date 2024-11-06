@@ -5,11 +5,9 @@ import ProductCards from './ProductCards';
 import Pagination from './Pagination';
 
 const Shop = () => {
-  const showResults = "Showing 1–9 of 20 results"; // Déclarez la variable showResults ici
+  const showResults = "Showing 1–9 of 20 results";
   const [GridList, setGridList] = useState(true);
-  const [products, setProducts] = useState(Data); // Corrigez ici en utilisant Data sans tableau imbriqué
-  console.log(products);
-
+  const [products] = useState(Data);
 
   // Ajout de la page de pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,13 +18,13 @@ const Shop = () => {
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
   // Change page
-  const paginate = (pagenumber) => {
-    setCurrentPage(pagenumber);
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
   }
+
   return (
     <div>
       <PageHeader title="Our Shop Page" curPage="Shop"/>
-      {/* shop page */}
       <div className="shop-page padding-tb">
         <div className="container">
           <div className="row justify-content-center">
@@ -47,20 +45,20 @@ const Shop = () => {
               </div>
 
               <div>
-                <ProductCards GridList={GridList} products={products}/>
+                <ProductCards GridList={GridList} products={currentProducts} />
               </div>
 
               {/* pagination page */}
               <Pagination 
-              productsPerPage={productsPerPage}
-              totalProducts={products.length}
-              paginate={paginate}
-              activePage={currentPage}
+                productsPerPage={productsPerPage}
+                totalProducts={products.length}
+                pagination={paginate} // Renommage de la prop en "pagination"
+                activePage={currentPage}
               />
-
              </article>
             </div>
             {/* fin du bloc */}
+            
             {/* Debut right side le bloc de droite */}
             <div className="col-lg-4 col-12">
               right side
