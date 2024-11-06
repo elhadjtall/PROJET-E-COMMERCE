@@ -7,9 +7,17 @@ const Pagination = ({productsPerPage, totalProducts, pagination, activePage}) =>
         pageNumbers.push(i);
     }
   return (
-    <div>
-      Pagination
-    </div>
+    <ul className='default-pagination lab-ul'>
+    {
+      pageNumbers.map(number => (
+      <li key={number} className={`page-item ${number === activePage ? "bg-warning" : ""}`}>
+        <button onClick={() => paginate(number)} className='bg-transparent border-0'>
+          {number}
+        </button>
+      </li>
+    ))}
+  </ul>
+  
   )
 }
 
