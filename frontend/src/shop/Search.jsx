@@ -11,10 +11,25 @@ export const Search = ({products, GridList}) => {
         <input type="text" name="search" id="search" placeholder="Search..." defaultValue={searchTerm} 
         onChange={(e) => setSearchTerm(e.target.value)}/>
         <button type="submit">
-          <i className="icofont-search"></i>
+          <i className="icofont-search-2"></i>
         </button>
       </form>
-      
+
+      {/* showing search result */}
+
+      <div>
+        {
+          searchTerm && filteredProducts.map((product) => (
+            <Link key={product.id} to={`/shop/${product.id}`}>
+              <div className='d-flex gap-3 p-2'>
+                <div>
+                  <img src={product.img} alt='' width={70} className='flex-grow-0' />
+                </div>
+              </div>
+              </Link>
+              ))
+            }
+    </div>
     </div>
   )
 }
