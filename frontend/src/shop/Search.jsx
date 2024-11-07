@@ -17,19 +17,29 @@ export const Search = ({products, GridList}) => {
       </form>
 
       {/* showing search result ce code permet de afficher les produits correspondants au terme de recherche*/}
-      <div>
-        {
-          searchTerm && filteredProducts.map((product) => (
-            <Link key={product.id} to={`/shop/${product.id}`}>
+        <div>
+          {
+            searchTerm && filteredProducts.map((product) => (
+              <Link key={product.id} to={`/shop/${product.id}`}>
               <div className='d-flex gap-3 p-2'>
-                <div>
-                  <img src={product.img} alt='' width={70} className='flex-grow-0' />
+                  <div>
+                    <div>
+                      <img src={product.img} alt='' width={70} className='flex-grow-0' />
+                    </div>
+                  </div>
+                  <div className="produtct-content">
+                    {/* filtrer les produits avec le nom du produit qui affiche devant */}
+                    <p>
+                      <Link to={`/shop/${product.id}`}>{product.name}</Link>
+                    </p>
+                    {/* filtrer les produits avec le prix du produit qui affiche devant */}
+                    <h6>${product.price}</h6>
+                  </div>
                 </div>
-              </div>
               </Link>
               ))
             }
-    </div>
+        </div>
     </div>
   )
 }
