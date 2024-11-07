@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Search = ({products, GridList}) => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -15,8 +16,7 @@ export const Search = ({products, GridList}) => {
         </button>
       </form>
 
-      {/* showing search result */}
-
+      {/* showing search result ce code permet de afficher les produits correspondants au terme de recherche*/}
       <div>
         {
           searchTerm && filteredProducts.map((product) => (
