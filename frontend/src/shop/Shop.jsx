@@ -4,6 +4,7 @@ import Data from '../products.json';
 import ProductCards from './ProductCards';
 import Pagination from './Pagination';
 import Search from './Search';
+import ShopCategory from './ShopCategory';
 
 const Shop = () => {
   const showResults = "Showing 1–9 of 20 results";
@@ -21,7 +22,21 @@ const Shop = () => {
   // Change page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  // Affichage des produits en fonction du type de produits
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const menuItems = [...new Set(Data.map((val) => val.category))];
+  const filterItem = (category) => {
+
+    const newItem = Data.filter((newVal) => {
+      return newVal.category === curcat;
+    })
+
+    setSelectedCategory(curcat);
+    setproducts(newItem);
   }
+  
 
   return (
     <div>
@@ -64,6 +79,15 @@ const Shop = () => {
             <div className="col-lg-4 col-12">
               <aside>
                 <Search products={products} GridList={GridList}/>
+
+                {/* Différent type de produits pour le vendeur */}
+                <ShopCategory 
+                filterItem={filterItem}
+                setItem={setproducts}
+                menuItems={menuItems}
+                setproducts={setproducts}
+                selectedCategory={selectedCategory}
+                />
               </aside>
             </div>
             {/* fin du bloc de droite */}
