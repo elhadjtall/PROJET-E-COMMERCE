@@ -23,7 +23,7 @@ export const Search = ({products, GridList}) => {
               <Link key={product.id} to={`/shop/${product.id}`}>
               <div className='d-flex gap-3 p-2'>
                   <div>
-                    <div>
+                    <div className='pro-thumb h-25'>
                       <img src={product.img} alt='' width={70} className='flex-grow-0' />
                     </div>
                   </div>
