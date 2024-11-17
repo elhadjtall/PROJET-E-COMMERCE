@@ -16,7 +16,7 @@ const ShopCategory = ({ filterItem, menuItems, selectedCategory, setSelectedCate
                 filterItem(val);
               }}
             >
-              {val}
+              {item}
             </button>
           ))
         }

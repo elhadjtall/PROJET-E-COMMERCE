@@ -9,7 +9,7 @@ import ShopCategory from './ShopCategory';
 const Shop = () => {
   const showResults = "Showing 1–9 of 20 results";
   const [GridList, setGridList] = useState(true);
-  const [products] = useState(Data);
+  const [products, setproducts] = useState(Data);
 
   // Ajout de la page de pagination
   const [currentPage, setCurrentPage] = useState(1);
