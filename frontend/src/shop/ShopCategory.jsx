@@ -1,4 +1,5 @@
 import React from 'react';
+import Data from '../products.json';
 
 const ShopCategory = ({ filterItem, setItem, menuItems, setProducts, selectedCategory }) => {
   return (
@@ -7,7 +8,7 @@ const ShopCategory = ({ filterItem, setItem, menuItems, setProducts, selectedCat
         <h5 className='ms-2'>All Categories</h5>
       </div>
       <div>
-        <button className={`ms-2 ${selectedCategory === "All" ? "bg-warning" : ""}`}>All</button>
+        <button onClick={() => setProducts(Data)} className={`ms-2 ${selectedCategory === "All" ? "bg-warning" : ""}`}>All</button>
         {
           menuItems.map((val, id) => {
             return (
