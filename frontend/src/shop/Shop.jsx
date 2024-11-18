@@ -24,12 +24,12 @@ const Shop = () => {
     setCurrentPage(pageNumber);
   };
 
-  // Affichage des produits en fonction du type de produits
+  // Affichage des produits en fonction du type de produits pour le vendeur ou pour le client
   const [selectedCategory, setSelectedCategory] = useState('All');
   const menuItems = [...new Set(Data.map((val) => val.category))];
   const filterItem = (category) => {
 
-    const newItem = Data.filter((newVal) => {
+    const filterItem = Data.filter((newVal) => {
       return newVal.category === curcat;
     })
 
@@ -85,7 +85,7 @@ const Shop = () => {
                 filterItem={filterItem}
                 setItem={setproducts}
                 menuItems={menuItems}
-                setproducts={setproducts}
+                setProducts={setproducts}
                 selectedCategory={selectedCategory}
                 />
               </aside>
