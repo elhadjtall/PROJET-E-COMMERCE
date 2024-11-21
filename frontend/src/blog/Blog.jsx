@@ -28,7 +28,6 @@ const Blog = () => {
 
   return (
     <div className="container mt-4">
-      <h1>Blog</h1>
       <div className="row">
         {products.map((product) => (
           <div key={product.id} className="col-md-4">
