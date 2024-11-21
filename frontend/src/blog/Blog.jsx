@@ -1,51 +1,49 @@
-import React, { useState } from 'react';
-import PageHeader from '../components/PageHeader';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
-  const [articles] = useState([
+  const products = [
     {
       id: 1,
-      title: "Comment réussir son projet React",
-      content: "Découvrez les meilleures pratiques pour réussir votre projet React...",
-      author: "Jean Dupont",
-      date: "2024-11-18",
+      name: "Produit 1",
+      description: "Description brève du produit 1.",
+      price: 29.99,
       image: "https://via.placeholder.com/150",
     },
     {
       id: 2,
-      title: "Guide pratique pour utiliser React Router",
-      content: "Un guide étape par étape pour intégrer React Router dans votre application.",
-      author: "Marie Curie",
-      date: "2024-11-17",
+      name: "Produit 2",
+      description: "Description brève du produit 2.",
+      price: 39.99,
       image: "https://via.placeholder.com/150",
     },
-  ]);
+    {
+      id: 3,
+      name: "Produit 3",
+      description: "Description brève du produit 3.",
+      price: 19.99,
+      image: "https://via.placeholder.com/150",
+    },
+  ];
 
   return (
-    <div>
-      <PageHeader title="Blog Page" curPage="Blog" />
-      <div className="container mt-4">
-        <div className="row">
-          {articles.map((article) => (
-            <div className="col-md-6 mb-4" key={article.id}>
-              <div className="card">
-                <img src={article.image} className="card-img-top" alt={article.title} />
-                <div className="card-body">
-                  <h5 className="card-title">{article.title}</h5>
-                  <p className="card-text">{article.content.substring(0, 100)}...</p>
-                  <p className="card-text">
-                    <small className="text-muted">
-                      Par {article.author} - {article.date}
-                    </small>
-                  </p>
-                  <a href={`/blog/${article.id}`} className="btn btn-primary">
-                    Lire la suite
-                  </a>
-                </div>
+    <div className="container mt-4">
+      <h1>Blog</h1>
+      <div className="row">
+        {products.map((product) => (
+          <div key={product.id} className="col-md-4">
+            <div className="card mb-4">
+              <img src={product.image} alt={product.name} className="card-img-top" />
+              <div className="card-body">
+                <h5 className="card-title">{product.name}</h5>
+                <p className="card-text">{product.description}</p>
+                <Link to={`/product/${product.id}`} className="btn btn-primary">
+                  Voir plus
+                </Link>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
