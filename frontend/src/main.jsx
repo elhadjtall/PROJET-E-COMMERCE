@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Register/>,  // <Home /> permet d'afficher la page d'accueil
-      }
+      },
     ],
   },
 ]);
